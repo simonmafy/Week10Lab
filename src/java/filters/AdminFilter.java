@@ -25,8 +25,8 @@ public class AdminFilter implements Filter {
         
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession();
-        User name = (User)session.getAttribute("user");
-        if (name.getRole().getRoleId() != 1) {
+        User user = (User)session.getAttribute("user");
+        if (user.getRole().getRoleId() != 1) {
             HttpServletResponse res = (HttpServletResponse) response;
             res.sendRedirect("notes");
             return;
